@@ -1,11 +1,41 @@
 <!DOCTYPE html>
 <html>
+<html ng-app="blocitoff">
 <head lang="en">
     <meta charset="UTF-8">
     <title>Bloc Base Project</title>
     <link rel="stylesheet" href="/styles/main.css">
 </head>
 <body>
+     <ui-view></ui-view>
+  <!-- Angular -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+    <!-- AngularUI Router -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.min.js"></script>
+
+    <!-- FireBase -->
+    <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
+    <!-- AngularFire -->
+    <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+
+     
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAana1MkfskAfQ4AecwU7OvSjc_p97G6P8",
+    authDomain: "blocitoff-37ea2.firebaseapp.com",
+    databaseURL: "https://blocitoff-37ea2.firebaseio.com",
+    projectId: "blocitoff-37ea2",
+    storageBucket: "blocitoff-37ea2.appspot.com",
+    messagingSenderId: "962307554560"
+  };
+  firebase.initializeApp(config);
+</script>
+
+
+
+  <!-- Application Files -->
     <h4>Hello, World???</h4>
     <script src="/scripts/app.js"></script>
 </body>
