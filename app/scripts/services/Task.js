@@ -6,8 +6,16 @@
 
     Task.all = tasks;
 
+    Task.add = function(task) {
+    tasks.$add(task);
+    }
+
+
+    Task.hide = function(taskId) {
+    var filteredTasks = $firebaseArray(ref.orderByChild("taskId").equalTo(taskId));
+    }
     return Task;
-  }
+}
 
 angular
 .module('blocitoff')
