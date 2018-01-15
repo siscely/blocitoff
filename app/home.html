@@ -1,1 +1,5 @@
 <h1>Home Page</h1>
+
+<ul>
+  <li ng-repeat="task in home.tasks" ng-click="home.selectTask(task)"> {{ task.$value }}</li>
+</ul>
