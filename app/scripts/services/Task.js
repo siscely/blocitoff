@@ -1,9 +1,9 @@
 (function() {
   function Task($firebaseArray) {
     var Task = {};
-    var ref = firebase.database().ref().child("tasks");
+    var ref = firebase.database().ref().child("Tasks");
     var tasks = $firebaseArray(ref);
-
+    console.log(tasks)
     Task.all = tasks;
 
     Task.add = function(task) {
@@ -12,7 +12,7 @@
 
 
     Task.hide = function(taskId) {
-    var filteredTasks = $firebaseArray(ref.orderByChild("taskId").equalTo(taskId));
+
     }
     return Task;
 }

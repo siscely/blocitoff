@@ -10,7 +10,7 @@
         var filteredTasks = $firebaseArray(ref.orderByChild("taskId").equalTo(taskId));
         return filteredTasks;
     };
-
+}
     angular
         .module('blocitoff')
         .factory('taskContent', ['$firebaseArray', taskContent]);

@@ -8,12 +8,12 @@
 
       this.selectTask = function(task){
         this.currentTask = task;
-        this.taskContents = taskContent.getByTaskId(task.$id);
+
       }
 
 }
 
     angular
         .module('blocitoff')
-        .controller('HomeCtrl', ['Task', 'taskContent', HomeCtrl]);
+        .controller('HomeCtrl', ['Task', HomeCtrl]);
 })();
