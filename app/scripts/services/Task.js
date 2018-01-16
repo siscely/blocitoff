@@ -11,7 +11,8 @@
     }
 
 
-    Task.hide = function(taskId) {
+    Task.hide = function() {
+      if tasks.completed == true
 
     }
     return Task;
