@@ -10,12 +10,7 @@
     tasks.$add(task);
     }
 
-
-    Task.hide = function() {
-      if tasks.completed == true
-
-    }
-    return Task;
+  return Task;
 }
 
 angular
