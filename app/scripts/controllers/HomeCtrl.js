@@ -5,18 +5,25 @@
       this.taskContents = null;
       this.createTask = Task.add;
 
-      this.hideTasks = function(){
+      this.hideTasks = function(task){
         var created_at = new Date(task.created_at);
-        var oneDayAgo = created_at.getDate() - 1;
-        if (completed == true && created_at > oneDayAgo)
+        var now = new Date();
+        now.setDate(now.getDate()-1)
+
+
+          if (task.completed == true && created_at > now){
+            return false;
+          }
+          else {
+            return true;
+          }
+        }
       }
 
-      this.selectTask = function(task){
-        this.currentTask = task;
-
-      }
-
-}
+      // this.selectTask = function(task){
+      //   this.currentTask = task;
+      //
+      // }
 
     angular
         .module('blocitoff')
