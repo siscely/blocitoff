@@ -23,6 +23,6 @@
      }
 
      angular
-          .module('blocitoff', ['ui.router', 'firebase'])
+          .module('blocitoff', ['ui.router', 'ui.bootstrap','firebase'])
           .config(config);
  })();

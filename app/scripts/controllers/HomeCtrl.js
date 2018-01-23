@@ -5,13 +5,13 @@
       this.taskContents = null;
       this.createTask = Task.add;
 
-      this.hideTasks = function(task){
+      this.filterTasks = function(task){
         var created_at = new Date(task.created_at);
         var now = new Date();
         now.setDate(now.getDate()-1)
 
+          if (task.completed == true || created_at > now){
 
-          if (task.completed == true && created_at > now){
             return false;
           }
           else {
