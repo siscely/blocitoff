@@ -5,11 +5,13 @@
     var tasks = $firebaseArray(ref);
     Task.all = tasks;
 
-    Task.add = function(task,priority) {
+    Task.add = function(title,priority) {
       var task = {};
-      task.title = task;
+      task.title = title;
       task.priority = priority;
       task.created_at = new Date().valueOf();
+      task.completed = false;
+      console.log(task);
       tasks.$add(task);
       }
   return Task;

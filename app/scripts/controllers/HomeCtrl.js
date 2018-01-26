@@ -2,7 +2,6 @@
     function HomeCtrl(Task) {
       this.currentTask = null;
       this.tasks = Task.all;
-      this.taskContents = null;
       this.createTask = Task.add;
 
       this.filterTasks = function(task){
@@ -10,7 +9,7 @@
         var now = new Date();
         now.setDate(now.getDate()-1)
 
-          if (task.completed == true || created_at > now){
+          if (task.completed == true || created_at < now){
 
             return false;
           }

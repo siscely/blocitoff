@@ -2,11 +2,11 @@
 <h1><a ui-sref="history">Task History</a></h1>
 
 <ul>
-  <li ng-repeat="task in home.tasks|filter:home.filterTasks"> {{ task.title}}
+  <li ng-repeat="task in home.tasks|filter:home.filterTasks|orderBy:'priority'"> {{ task.title}}
     <input type="checkbox" ng-click="history.createTask(task)"></button><br/></li>
 </ul>
 
-<form ng-submit="home.createTask(home.newTaskName, home.newPriority)">
+<form ng-submit="home.createTask(home.newTaskName, home.newPriorityLevel)">
     <div>
         <label>Create a New Task<label></br>
         <label for="task">Task Description</label></br>
@@ -15,9 +15,9 @@
     <div>
         <label for="priority">Priority</label></br>
         <select name="priority" id="priority" ng-model="home.newPriorityLevel">
-          <option value="option-1">High</option>
-          <option value="option-2">Medium</option>
-          <option value="option-3">Low</option>
+          <option value="1">High</option>
+          <option value="2">Medium</option>
+          <option value="3">Low</option>
         </select><br>
     </div>
     <div class="button">
