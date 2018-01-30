@@ -1,5 +1,5 @@
 (function() {
-  function Task($firebaseArray) {
+  function Task($firebaseArray, $firebaseObject) {
     var Task = {};
     var ref = firebase.database().ref().child("Tasks");
     var tasks = $firebaseArray(ref);
@@ -14,8 +14,17 @@
       console.log(task);
       tasks.$add(task);
       }
+      Task.saveTask = function(task) {
+        var ref = firebase.database().ref().child("Tasks");
+        var ref1 = $firebaseObject(ref.child(task.id));
+        ref1.completed = !ref1.completed;
+        ref1.$save();
+      }
   return Task;
+
 }
+
+
 
 angular
 .module('blocitoff')

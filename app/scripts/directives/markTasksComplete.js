@@ -1,30 +1,30 @@
 (function() {
-     function markTasksComplete() {
+     function markTasksComplete($firebaseArray) {
        return {
          templateUrl: '/templates/directives/',
          replace: true,
-         restrict: 'E'
-         scope: { },
+         restrict: 'E',
+         scope: {
+           toggle: '=',
+          },
          link: function(scope, element, attributes) {
 
-         scope.onClickTaskComplete = function(event) {
-           var created_at = new Date(task.created_at);
-           var now = new Date();
-           now.setDate(now.getDate()-1)
+           $scope.$watch("toggle", function(value) {
+                element.toggleClass('active', value)
+            })
+
+            element.click(function() {
+                $scope.$apply(function() {
+                    $scope.toggle = !$scope.toggle
+                })
+            })
+        }
+    }
+  }
 
 
-             if (task.completed == true && created_at > now){
-               return false;
-             }
-             else {
-               return true;
-             }
-           }
-         }
-       }
-     }
 
      angular
          .module('blocitoff')
-         .directive('markTasksComplete', ['$firebaseArray', markTasksComplete]);
+         .directive('markTasksComplete', ['Task', '$firebaseArray', markTasksComplete]);
  })();
