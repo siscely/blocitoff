@@ -18,13 +18,22 @@
             return true;
           }
         }
-      }
 
-      this.taskComplete = function(task){
-        task.completed = !task.completed;
-      }
+
+
+
+};
+
 
     angular
         .module('blocitoff')
-        .controller('HomeCtrl', ['Task', HomeCtrl]);
+        .controller('HomeCtrl', ['Task', HomeCtrl])
+        .directive('checkTaskCompletion', function() {
+          return {
+            scope:{
+              complete: '=info'
+            },
+            template:"<input type='checkbox'ng-click= {{complete}}>"
+          }
+        });
 })();
