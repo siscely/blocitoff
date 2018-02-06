@@ -28,12 +28,15 @@
     angular
         .module('blocitoff')
         .controller('HomeCtrl', ['Task', HomeCtrl])
-        .directive('checkTaskCompletion', function() {
+        .directive('checkTaskCompletion', ['Task', function(Task) {
           return {
             scope:{
-              complete: '=info'
+              task: "="
             },
-            template:"<input type='checkbox'ng-click= {{complete}}>"
+            link: function(scope, element, attributes){
+              scope.complete = Task.saveTask;
+            },
+            template:"<input type='checkbox'ng-click= Task.saveTask(task)>"
           }
-        });
+        }]);
 })();
