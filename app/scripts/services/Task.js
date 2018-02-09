@@ -14,10 +14,9 @@
       tasks.$add(task);
       }
       Task.saveTask = function(task) {
-        var allTasks = this.tasks
-        var index = allTasks.$indexFor(task.$id);
-        allTasks[index].completed = true;
-        allTasks.$save(index);
+        var index = tasks.$indexFor(task.$id);
+        tasks[index].completed = true;
+        tasks.$save(index);
       }
   return Task;
 

@@ -30,13 +30,14 @@
         .controller('HomeCtrl', ['Task', HomeCtrl])
         .directive('checkTaskCompletion', ['Task', function(Task) {
           return {
-            scope:{
-              task: "="
+            scope: true,
+
+              link: function(scope, element, attributes){
+              scope.complete = function(task){
+                Task.saveTask(task);
+              }
             },
-            link: function(scope, element, attributes){
-              scope.complete = Task.saveTask;
-            },
-            template:"<input type='checkbox'ng-click= Task.saveTask(task)>"
+            template:"<input type='checkbox' ng-click= complete(task)>"
           }
         }]);
 })();

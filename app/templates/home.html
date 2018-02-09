@@ -3,7 +3,7 @@
 
 <ul>
   <li ng-repeat="task in home.tasks|filter:home.filterTasks|orderBy:'priority'"> {{ task.title}}
-  <check-task-completion task=task></li>
+  <check-task-completion></li>
 </ul>
 
 <form ng-submit="home.createTask(home.newTaskName, home.newPriorityLevel)">
