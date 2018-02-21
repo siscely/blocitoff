@@ -93,8 +93,7 @@ Generate and save tasks. Verify that they appear on Firebase's dashboard.
 
 ## View Active Tasks
 As a user, I want to see my active tasks in a list as my default view.  Setup ui-router and define a home or index state. Associate the state with a template that holds the view of the list, and add a controller either as an option on the ui-router state or as an attribute-based directive on the HTML element that contains the view.  Use ngRepeat to iterate over your array of tasks and create an element for each.
-
-### Test your code
+### Test your code on localhost3000
 Generate some tasks. Verify that each task appears in the active tasks list.
 
 ## Hide Old Tasks
@@ -113,10 +112,10 @@ As a user, I want expired and completed tasks presented in a separate view.  Cre
 ## Create New Tasks
 As a user, I want to submit new tasks with a description, priority level and three states: expired, completed or active. To put the input for submitting my new tasks, create an input with an ngModel tied to a  $scope model at the top of the list. Allow the user to save the task by clicking a button or link. By default, create all tasks with the active state.
 
-### Allow Priority Selection
-How should I choose a priority level when I create the task? Distinguish tasks as "high", "medium", or "low" priority. Use a <select> dropdown to hold all of the priority levels and choose one before submitting the task.
+## Allow Priority Selection
+Distinguish tasks as "high", "medium", or "low" priority. Use a <select> dropdown to hold all of the priority levels and choose one before submitting the task.
 
-### Save Tasks to Firebase
+## Save Tasks to Firebase
 Create a $scope method to pass into an ngClick in your HTML. The $scope method must call the $add() method on the array to sync the task with Firebase.
 
 ## Refresh the List
