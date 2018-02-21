@@ -114,12 +114,10 @@ As a user, I want to submit new tasks with a description, priority level and thr
 
 Distinguish tasks as "high", "medium", or "low" priority. Use a select dropdown to hold all of the priority levels and choose one before submitting the task. However, it is not imperative that you determine priority while creating the task. You could, for example, automatically push new tasks to the end of the array and use up and down arrows to determine the importance of each task.
 
-Save Tasks to Firebase
 How can I save the task to Firebase?*
 
 Create a $scope method to pass into an ngClick in your HTML. The $scope method must call the $add() method on the array to sync the task with Firebase.
 
-Refresh the List
 How can I update my list of tasks on save?*
 
 There's no need. When you set the task array equal to a Firebase object instance with a $firebaseArray() call, your data will automatically keep up with your changes.
