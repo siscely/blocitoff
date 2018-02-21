@@ -109,18 +109,8 @@ As a user, I want expired and completed tasks presented in a separate view.  Cre
 1. Verify these tasks do not appear in the main view.
 1. Verify these tasks appear in your task history view.
 
-## Create New Tasks
-As a user, I want to submit new tasks with a description, priority level and three states: expired, completed or active. To put the input for submitting my new tasks, create an input with an ngModel tied to a  $scope model at the top of the list. Allow the user to save the task by clicking a button or link. By default, create all tasks with the active state.
-
-## Allow Priority Selection
-Distinguish tasks as "high", "medium", or "low" priority. Use a <select> dropdown to hold all of the priority levels and choose one before submitting the task.
-
-## Save Tasks to Firebase
-Create a $scope method to pass into an ngClick in your HTML. The $scope method must call the $add() method on the array to sync the task with Firebase.
-
-## Refresh the List
-How can I update my list of tasks on save?*  There's no need. When you set the task array equal to a Firebase object instance with a $firebaseArray() call, your data will automatically keep up with your changes.
-
+## Create New Tasks, Allow Priority Selection, Save Tasks to Firebase, and Refresh the list
+As a user, I want to submit new tasks with a description, priority level and three states: expired, completed or active
 ### Test Your Code
 1. Create tasks with your field.
 1. Verify that tasks are automatically inserted into your active tasks list.
