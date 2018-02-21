@@ -112,13 +112,33 @@ The `templates` directory should hold any HTML files used as templates in Angula
 Taskitoff uses the Firebase API and AngularJS to create tasks with an expiration date.
 
 ### Tools
-Firebase
+Firebase, Atom text editor
 
 ### Description:
 Instantiate the Firebase service with the new operator. You can do this in your controller, or abstract it into an additional service or factory that handles all of your model's data management, Firebase or otherwise.
 
 Firebase has a service called $firebaseArray() that can be used to sync a Firebase database with an Angular model like an array of tasks. Set the $scope array holding your tasks to a Firebase object that calls $firebaseArray().
 
-## Test your code:  Generate and save tasks. Verify that they appear on Firebase's dashboard.
+### Test your code
+Generate and save tasks. Verify that they appear on Firebase's dashboard.
 
+## View Active Tasks
+As a user, I want to see my active tasks in a list as my default view
+
+## Configure ui-router
+Set up ui-router and define a home or index state. Associate the state with a template that holds the view of the list, and add a controller either as an option on the ui-router state or as an attribute-based directive on the HTML element that contains the view.
+
+Use ngRepeat to iterate over your array of tasks and create an element for each.
+
+### Test your code
+Generate some tasks. Verify that each task appears in the active tasks list.
+
+## Hide old Tasks
+As a user, I want completed tasks and tasks older than seven days hidden from my main task views automatically.
+
+I used Directives within the controller to hide old tasks.
+
+### Test Your Code on localhost3000
+1. I generate a variety of tasks, some older than seven days. Verified that tasks older than seven days do not appear in my active tasks list.
+1. Generated a variety of tasks, some completed, some otherwise. Verified that completed tasks do not appear in my active tasks list.
 
