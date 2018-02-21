@@ -111,14 +111,14 @@ The `templates` directory should hold any HTML files used as templates in Angula
 ### Introduction
 Taskitoff uses the Firebase API and AngularJS to create tasks with an expiration date.
 
-###Tools
+### Tools
 Firebase
 
-###Description:
+### Description:
 Instantiate the Firebase service with the new operator. You can do this in your controller, or abstract it into an additional service or factory that handles all of your model's data management, Firebase or otherwise.
 
 Firebase has a service called $firebaseArray() that can be used to sync a Firebase database with an Angular model like an array of tasks. Set the $scope array holding your tasks to a Firebase object that calls $firebaseArray().
 
-##Test your code:  Generate and save tasks. Verify that they appear on Firebase's dashboard.
+## Test your code:  Generate and save tasks. Verify that they appear on Firebase's dashboard.
 
 
