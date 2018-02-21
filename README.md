@@ -86,54 +86,35 @@ Taskitoff uses the Firebase API and AngularJS to create tasks with an expiration
 Firebase, Atom text editor
 
 ### Description:
-Instantiate the Firebase service with the new operator. You can do this in your controller, or abstract it into an additional service or factory that handles all of your model's data management, Firebase or otherwise.
-
-Firebase has a service called $firebaseArray() that can be used to sync a Firebase database with an Angular model like an array of tasks. Set the $scope array holding your tasks to a Firebase object that calls $firebaseArray().
+Instantiate the Firebase service, you can do this in your controller. Use service called $firebaseArray() that can be used to sync a Firebase database with an Angular model like an array of tasks. Set the $scope array holding your tasks to a Firebase object that calls $firebaseArray().
 
 ### Test your code
 Generate and save tasks. Verify that they appear on Firebase's dashboard.
 
 ## View Active Tasks
-As a user, I want to see my active tasks in a list as my default view
-
-## Configure ui-router
-Set up ui-router and define a home or index state. Associate the state with a template that holds the view of the list, and add a controller either as an option on the ui-router state or as an attribute-based directive on the HTML element that contains the view.
-
-Use ngRepeat to iterate over your array of tasks and create an element for each.
+As a user, I want to see my active tasks in a list as my default view.  Setup ui-router and define a home or index state. Associate the state with a template that holds the view of the list, and add a controller either as an option on the ui-router state or as an attribute-based directive on the HTML element that contains the view.  Use ngRepeat to iterate over your array of tasks and create an element for each.
 
 ### Test your code
 Generate some tasks. Verify that each task appears in the active tasks list.
 
 ## Hide Old Tasks
-As a user, I want completed tasks and tasks older than seven days hidden from my main task views automatically.
-
-I used Directives within the controller to hide old tasks.
-
+As a user, I want completed tasks and tasks older than seven days hidden from my main task views automatically.  I used Directives within the controller to hide old tasks.
 ### Test Your Code on localhost3000
-1. I generate a variety of tasks, some older than seven days. Verified that tasks older than seven days do not appear in my active tasks list.
+1. Generate a variety of tasks, some older than seven days. Verified that tasks older than seven days do not appear in my active tasks list.
 1. Generated a variety of tasks, some completed, some otherwise. Verified that completed tasks do not appear in my active tasks list.
 
 ## View Past Tasks
-As a user, I want expired and completed tasks presented in a separate view.
-
-Create a separate state, template, controller and register them with your ui-router-driven routes. Add a link at the top of your default view that has a ui-sref pointing to the state of your expired and completed tasks.
-
-It's not imperative that you distinguish between expired and completed. You can create a single, separate view that has all past tasks.
-
+As a user, I want expired and completed tasks presented in a separate view.  Create a separate state, template, controller and register them with your ui-router-driven routes. Add a link at the top of your default view that has a ui-sref pointing to the state of your expired and completed tasks.
 ### Test Your Code
 1. Generate tasks both older than seven days and completed.
 1. Verify these tasks do not appear in the main view.
 1. Verify these tasks appear in your task history view.
 
 ## Create New Tasks
-As a user, I want to submit new tasks with a description, priority level and three states: expired, completed or active.
-
-To put the input for submitting my new tasks, create an input with an ngModel tied to a  $scope model at the top of the list. Allow the user to save the task by clicking a button or link. By default, create all tasks with the active state.
+As a user, I want to submit new tasks with a description, priority level and three states: expired, completed or active. To put the input for submitting my new tasks, create an input with an ngModel tied to a  $scope model at the top of the list. Allow the user to save the task by clicking a button or link. By default, create all tasks with the active state.
 
 ### Allow Priority Selection
-How should I choose a priority level when I create the task?
-
-Distinguish tasks as "high", "medium", or "low" priority. Use a <select> dropdown to hold all of the priority levels and choose one before submitting the task. However, it is not imperative that you determine priority while creating the task. You could, for example, automatically push new tasks to the end of the array and use up and down arrows to determine the importance of each task.
+How should I choose a priority level when I create the task? Distinguish tasks as "high", "medium", or "low" priority. Use a <select> dropdown to hold all of the priority levels and choose one before submitting the task.
 
 ### Save Tasks to Firebase
 Create a $scope method to pass into an ngClick in your HTML. The $scope method must call the $add() method on the array to sync the task with Firebase.
